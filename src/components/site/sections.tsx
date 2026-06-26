@@ -5,9 +5,7 @@ import {
   ArrowRight,
   Users,
   MapPin,
-  Star,
   ChevronDown,
-  Quote,
   Phone,
   CheckCircle2,
 } from "lucide-react";
@@ -458,49 +456,32 @@ export function Process({ showCta }: { showCta?: boolean }) {
 }
 
 export function Testimonials() {
+  const images = Array.from(
+    { length: 40 },
+    (_, i) => `/assets/galeri-testimoni/testi-${i + 1}.webp`,
+  );
+
   return (
     <section className="py-24 sm:py-32 bg-secondary relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8 relative">
-        <motion.div {...fade} className="text-center max-w-2xl mx-auto">
-          <div className="text-[11px] tracking-[0.3em] uppercase text-gold-dark font-semibold">
-            Galeri Testimoni
-          </div>
-          <h2 className="mt-3 font-display text-3xl sm:text-5xl font-bold text-navy leading-[1.1]">
-            Dipercaya oleh <span className="text-gradient-gold italic">ratusan pelanggan</span>
-          </h2>
-          <div className="gold-divider mx-auto mt-6" />
-        </motion.div>
-
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {testimonials.map((t, i) => (
+        <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {images.map((src, i) => (
             <motion.div
-              key={t.name}
+              key={src}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: (i % 3) * 0.08, duration: 0.6 }}
-              className="group relative rounded-3xl bg-white/70 backdrop-blur-xl border border-white p-7 hover:shadow-luxe hover:-translate-y-1 transition-all duration-500"
+              transition={{ delay: (i % 3) * 0.05, duration: 0.5 }}
+              className="relative overflow-hidden rounded-3xl bg-white/70 backdrop-blur-xl border border-white"
             >
-              <Quote className="absolute top-6 right-6 h-10 w-10 text-gold/15" />
-              <div className="flex gap-0.5">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="h-4 w-4 fill-gold text-gold" />
-                ))}
-              </div>
-              <p className="mt-5 text-[15px] text-foreground leading-relaxed">"{t.text}"</p>
-              <div className="mt-7 flex items-center gap-3 pt-5 border-t border-border/60">
-                <img
-                  src={`https://randomuser.me/api/portraits/${t.avatar}.jpg`}
-                  alt={t.name}
-                  className="h-12 w-12 rounded-full object-cover ring-2 ring-gold/30"
-                  loading="lazy"
-                />
-                <div className="min-w-0">
-                  <div className="font-semibold text-navy truncate">{t.name}</div>
-                  <div className="text-xs text-muted-foreground truncate">{t.role}</div>
-                </div>
-              </div>
+              <img
+                src={src}
+                alt={`Testimoni ${i + 1}`}
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-navy-dark/10 to-transparent" />
             </motion.div>
           ))}
         </div>
