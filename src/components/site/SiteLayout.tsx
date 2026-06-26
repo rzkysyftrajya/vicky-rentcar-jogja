@@ -18,7 +18,7 @@ function Nav() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-4 flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3 group shrink-0">
-          <div className="grid h-11 w-11 place-items-center rounded-full bg-gold-gradient shadow-gold overflow-hidden">
+          <div className="grid h-11 w-11 place-items-center rounded-full overflow-hidden bg-transparent">
             <img
               src={img("logoVRN.webp")}
               alt="Logo VRN"
@@ -101,7 +101,7 @@ function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-3">
-              <div className="grid h-11 w-11 place-items-center rounded-full bg-gold-gradient overflow-hidden">
+              <div className="grid h-11 w-11 place-items-center rounded-full overflow-hidden bg-transparent">
                 <img
                   src={img("logoVRN.webp")}
                   alt="Logo VRN"
