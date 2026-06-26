@@ -3,7 +3,7 @@ export const WA_NUMBER = "82363389893";
 export const wa = (msg: string) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 
 // Diubah agar langsung mengarah ke folder lokal src/assets
-export const img = (path: string) => `/src/assets/${path}`;
+export const img = (path: string) => `/assets/${path}`;
 
 export const BRAND = {
   name: "PT. VICKY RENTCAR JOGJA",

@@ -1,3 +1,11 @@
-- [ ] Update `src/lib/site-data.ts` fleet structure to include `category`, `name`, `seats`, `transmission` (remove old fields like `tag`) and add 3 recommended units + align unit names to existing image files under `src/assets/armada/`.
-- [ ] Update `src/components/site/sections.tsx` FleetGrid UI to remove all “Harga” section and render category/seats/transmission neatly.
-- [ ] Verify TypeScript build by running `bun run build` or `npm run build`.
+# TODO
+
+## Vicky Rentcar Jogja
+
+- [x] Update repository so code is pushed to GitHub
+- [ ] Fix assets rendering di Vercel
+  - [ ] Buat folder `public/assets`
+  - [ ] Pindahkan `src/assets/*` ke `public/assets/*`
+  - [ ] Ubah helper `img()` di `src/lib/site-data.ts` dari `/src/assets/...` ke `/assets/...`
+  - [ ] Commit & push
+  - [ ] Trigger redeploy Vercel dan cek gambar (tidak 404)
