@@ -182,12 +182,11 @@ export function FleetGrid({ limit, showCta }: { limit?: number; showCta?: boolea
               transition={{ delay: (i % 3) * 0.08, duration: 0.6 }}
               className="group relative rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-luxe transition-all duration-500"
             >
-              {/* PERBAIKAN: Rasio disesuaikan ke tampilan 644x911 */}
               <div className="relative aspect-[644/911] overflow-hidden bg-navy-dark">
                 <img
-                  src={img(v.img, 1414, 2000)} // Resolusi gambar asli 1414x2000 px
+                  src={img(v.img, 1414, 2000)}
                   alt={v.name}
-                  className="absolute inset-0 h-full w-full object-cover" // Zoom hover dinonaktifkan
+                  className="absolute inset-0 h-full w-full object-cover"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/70 via-navy-dark/10 to-transparent" />
@@ -483,7 +482,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (i % 3) * 0.05, duration: 0.5 }}
-              className="relative overflow-hidden rounded-3xl bg-white/70 backdrop-blur-xl border border-white"
+              className="relative aspect-square overflow-hidden rounded-3xl bg-white/70 backdrop-blur-xl border border-white"
             >
               <img
                 src={src}
