@@ -175,7 +175,7 @@ export const services = [
   {
     title: "Premium Rentcar",
     desc: "Rental mobil + driver profesional untuk perjalanan harian, mingguan, atau bulanan.",
-    img: "hero-car.jpg", // Menggunakan hero-car lokal sebagai fallback
+    img: "section-premium.webp", // Menggunakan hero-car lokal sebagai fallback
     size: "lg" as const,
   },
   {
