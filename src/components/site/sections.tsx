@@ -456,10 +456,10 @@ export function Process({ showCta }: { showCta?: boolean }) {
 }
 
 export function Testimonials() {
-  const images = Array.from(
-    { length: 40 },
-    (_, i) => `/assets/galeri-testimoni/testi-${i + 1}.webp`,
-  );
+  const images = Array.from({ length: 40 }, (_, i) => {
+    const n = i + 1;
+    return `/assets/galeri-testimoni/testi-${n}.webp`;
+  });
 
   return (
     <section className="py-24 sm:py-32 bg-secondary relative overflow-hidden">
