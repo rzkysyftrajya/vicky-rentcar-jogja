@@ -17,7 +17,6 @@ import {
   fleet,
   services,
   destinations,
-  testimonials,
   faqs,
   processSteps,
   WA_NUMBER,
@@ -72,7 +71,7 @@ export function WhyUs() {
           <motion.div {...fade} className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-luxe aspect-[4/5]">
               <img
-                src={img("1494976388531-d1058494cdd8", 900, 1100)}
+                src={img("1494976388531-d1058494cdd8")}
                 alt="Pengalaman premium rentcar"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
@@ -95,7 +94,7 @@ export function WhyUs() {
               className="hidden sm:block absolute -bottom-8 -right-8 w-56 rounded-2xl overflow-hidden shadow-luxe border-4 border-background"
             >
               <img
-                src={img("1583121274602-3e2820c69888", 500, 400)}
+                src={img("1583121274602-3e2820c69888")}
                 alt="Interior mewah"
                 className="w-full h-44 object-cover"
                 loading="lazy"
@@ -138,7 +137,7 @@ export function WhyUs() {
             <a
               href={wa("Halo Vicky, saya ingin tahu lebih lanjut tentang layanan Anda.")}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-gold transition group"
             >
               Konsultasi via WhatsApp
@@ -184,7 +183,7 @@ export function FleetGrid({ limit, showCta }: { limit?: number; showCta?: boolea
             >
               <div className="relative aspect-[644/911] overflow-hidden bg-navy-dark">
                 <img
-                  src={img(v.img, 1414, 2000)}
+                  src={img(v.img)}
                   alt={v.name}
                   className="absolute inset-0 h-full w-full object-cover"
                   loading="lazy"
@@ -226,7 +225,7 @@ export function FleetGrid({ limit, showCta }: { limit?: number; showCta?: boolea
                 <a
                   href={wa(`Halo Vicky, saya ingin tanya ketersediaan ${v.name}.`)}
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   className="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-navy hover:bg-navy-light text-white font-semibold py-3 text-sm transition group/btn"
                 >
                   <MessageCircle className="h-4 w-4 text-gold" /> Tanya via WhatsApp
@@ -273,7 +272,7 @@ export function ServicesGrid({ showCta }: { showCta?: boolean }) {
               key={s.title}
               href={wa(`Halo Vicky, saya tertarik dengan layanan ${s.title}.`)}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -281,7 +280,7 @@ export function ServicesGrid({ showCta }: { showCta?: boolean }) {
               className={`group relative rounded-3xl overflow-hidden cursor-pointer ${s.size === "lg" ? "lg:col-span-2 lg:row-span-2" : ""}`}
             >
               <img
-                src={img(s.img, s.size === "lg" ? 1000 : 600, s.size === "lg" ? 1000 : 600)}
+                src={img(s.img)}
                 alt={s.title}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-110"
                 loading="lazy"
@@ -347,7 +346,7 @@ export function DestinationsGrid({ limit, showCta }: { limit?: number; showCta?:
               key={d.name}
               href={wa(`Halo Vicky, saya ingin paket wisata ke ${d.name}.`)}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -355,7 +354,7 @@ export function DestinationsGrid({ limit, showCta }: { limit?: number; showCta?:
               className={`group relative rounded-3xl overflow-hidden cursor-pointer ${d.span}`}
             >
               <img
-                src={img(d.img, 900, d.span ? 1100 : 600)}
+                src={img(d.img)}
                 alt={d.name}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-100"
                 loading="lazy"
@@ -394,7 +393,7 @@ export function Process({ showCta }: { showCta?: boolean }) {
     <section id="proses" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={img("1469854523086-cc02fe5d8800", 1920, 1080)}
+          src={img("1469854523086-cc02fe5d8800")}
           alt=""
           className="h-full w-full object-cover"
           loading="lazy"
@@ -438,7 +437,7 @@ export function Process({ showCta }: { showCta?: boolean }) {
           <a
             href={wa("Halo Vicky, saya ingin memulai booking.")}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="btn-whatsapp"
           >
             <MessageCircle className="h-5 w-5" /> Mulai Booking Sekarang
@@ -455,15 +454,22 @@ export function Process({ showCta }: { showCta?: boolean }) {
 }
 
 export function Testimonials() {
-  const images = Array.from({ length: 40 }, (_, i) => {
-    const n = i + 1;
-    return `/assets/galeri-testimoni/testi-${n}.webp`;
-  });
+  // Membagi 40 gambar ke dalam 3 baris secara merata
+  const row1 = Array.from({ length: 13 }, (_, i) => `/assets/galeri-testimoni/testi-${i + 1}.webp`);
+  const row2 = Array.from(
+    { length: 13 },
+    (_, i) => `/assets/galeri-testimoni/testi-${i + 14}.webp`,
+  );
+  const row3 = Array.from(
+    { length: 14 },
+    (_, i) => `/assets/galeri-testimoni/testi-${i + 27}.webp`,
+  );
 
   return (
     <section className="py-24 sm:py-32 bg-secondary relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl" />
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 relative">
+
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 relative mb-14">
         <motion.div {...fade} className="text-center max-w-2xl mx-auto">
           <div className="text-[11px] tracking-[0.3em] uppercase text-gold-dark font-semibold">
             Galeri Testimoni
@@ -473,16 +479,16 @@ export function Testimonials() {
           </h2>
           <div className="gold-divider mx-auto mt-6" />
         </motion.div>
+      </div>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {images.map((src, i) => (
-            <motion.div
-              key={src}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (i % 3) * 0.05, duration: 0.5 }}
-              className="relative aspect-square overflow-hidden rounded-3xl bg-white/70 backdrop-blur-xl border border-white"
+      {/* CONTAINER CAROUSEL AUTOMATIS (3 BARIS) */}
+      <div className="flex flex-col gap-4 sm:gap-6 max-w-[100vw] overflow-hidden group">
+        {/* BARIS 1: Bergerak ke Kiri */}
+        <div className="flex gap-4 sm:gap-6 animate-[marqueeLeft_40s_linear_infinite] whitespace-nowrap will-change-transform">
+          {[...row1, ...row1].map((src, i) => (
+            <div
+              key={`r1-${i}`}
+              className="relative w-44 h-44 sm:w-64 sm:h-64 shrink-0 overflow-hidden rounded-2xl sm:rounded-3xl bg-white/70 backdrop-blur-xl border border-white shadow-sm"
             >
               <img
                 src={src}
@@ -490,11 +496,59 @@ export function Testimonials() {
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-navy-dark/10 to-transparent" />
-            </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
+            </div>
+          ))}
+        </div>
+
+        {/* BARIS 2: Bergerak ke Kanan */}
+        <div className="flex gap-4 sm:gap-6 animate-[marqueeRight_45s_linear_infinite] whitespace-nowrap will-change-transform">
+          {[...row2, ...row2].map((src, i) => (
+            <div
+              key={`r2-${i}`}
+              className="relative w-44 h-44 sm:w-64 sm:h-64 shrink-0 overflow-hidden rounded-2xl sm:rounded-3xl bg-white/70 backdrop-blur-xl border border-white shadow-sm"
+            >
+              <img
+                src={src}
+                alt={`Testimoni ${i + 14}`}
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
+            </div>
+          ))}
+        </div>
+
+        {/* BARIS 3: Bergerak ke Kiri Kembali */}
+        <div className="flex gap-4 sm:gap-6 animate-[marqueeLeft_50s_linear_infinite] whitespace-nowrap will-change-transform">
+          {[...row3, ...row3].map((src, i) => (
+            <div
+              key={`r3-${i}`}
+              className="relative w-44 h-44 sm:w-64 sm:h-64 shrink-0 overflow-hidden rounded-2xl sm:rounded-3xl bg-white/70 backdrop-blur-xl border border-white shadow-sm"
+            >
+              <img
+                src={src}
+                alt={`Testimoni ${i + 27}`}
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
+            </div>
           ))}
         </div>
       </div>
+
+      {/* CSS KEYFRAMES UNTUK JALAN OTOMATIS */}
+      <style>{`
+        @keyframes marqueeLeft {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marqueeRight {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+      `}</style>
     </section>
   );
 }
@@ -521,7 +575,7 @@ export function FAQList({ limit, showCta }: { limit?: number; showCta?: boolean 
               <a
                 href={wa("Halo Vicky, saya ingin tanya tentang layanan Anda.")}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="btn-whatsapp"
               >
                 <MessageCircle className="h-5 w-5" /> Tanya Sekarang
@@ -574,7 +628,7 @@ export function FinalCTA() {
   return (
     <section className="relative py-28 sm:py-40 overflow-hidden">
       <img
-        src={img("1492144534655-ae79c964c9d7", 1920, 1080)}
+        src={img("1492144534655-ae79c964c9d7")}
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
@@ -606,7 +660,7 @@ export function FinalCTA() {
             <a
               href={wa("Halo Vicky, saya ingin booking rental mobil + driver di Jogja.")}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="btn-whatsapp !py-5 !px-9 !text-base"
             >
               <MessageCircle className="h-6 w-6" /> WhatsApp Sekarang
