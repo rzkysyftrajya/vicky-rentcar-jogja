@@ -1,0 +1,3 @@
+- [ ] Update `src/lib/site-data.ts` fleet structure to include `category`, `name`, `seats`, `transmission` (remove old fields like `tag`) and add 3 recommended units + align unit names to existing image files under `src/assets/armada/`.
+- [ ] Update `src/components/site/sections.tsx` FleetGrid UI to remove all “Harga” section and render category/seats/transmission neatly.
+- [ ] Verify TypeScript build by running `bun run build` or `npm run build`.
