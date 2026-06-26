@@ -175,37 +175,37 @@ export const services = [
   {
     title: "Premium Rentcar",
     desc: "Rental mobil + driver profesional untuk perjalanan harian, mingguan, atau bulanan.",
-    img: "section-premium.webp", // Menggunakan hero-car lokal sebagai fallback
+    img: "section-premium-rentcar.webp", // Menggunakan hero-car lokal sebagai fallback
     size: "lg" as const,
   },
   {
     title: "Antar Jemput Bandara YIA",
     desc: "Penjemputan tepat waktu di Bandara YIA & Adisutjipto dengan meet & greet.",
-    img: "hero-car.jpg",
+    img: "antar-jemput-bandara-yia.webp",
     size: "sm" as const,
   },
   {
     title: "Paket Wisata Jogja",
     desc: "Paket wisata fleksibel ke seluruh objek wisata Yogyakarta.",
-    img: "hero-car.jpg",
+    img: "paket-wisata-jogja.webp",
     size: "sm" as const,
   },
   {
     title: "Perjalanan Korporat",
     desc: "Layanan profesional untuk perjalanan dinas, meeting, dan kunjungan kerja.",
-    img: "hero-car.jpg",
+    img: "perjalanan-korporat.webp",
     size: "sm" as const,
   },
   {
     title: "Family Trip",
     desc: "Armada lega dan nyaman untuk liburan keluarga, reuni, dan acara.",
-    img: "armada/INNOVA-REBORN.webp",
+    img: "family-trip.webp",
     size: "sm" as const,
   },
   {
     title: "Wedding & Event",
     desc: "Solusi transportasi untuk wedding, gathering, dan corporate event.",
-    img: "armada/TOYOTA-ALPHARD.webp",
+    img: "paket-wedding.webp",
     size: "lg" as const,
   },
 ];
