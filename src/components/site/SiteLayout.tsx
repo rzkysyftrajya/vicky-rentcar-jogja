@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
-import { BRAND, WA_NUMBER, wa, navLinks } from "@/lib/site-data";
+import { BRAND, WA_NUMBER, wa, navLinks, img } from "@/lib/site-data";
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,8 +18,13 @@ function Nav() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-4 flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3 group shrink-0">
-          <div className="grid h-11 w-11 place-items-center rounded-full bg-gold-gradient shadow-gold">
-            <span className="font-display font-bold text-navy-dark text-lg">V</span>
+          <div className="grid h-11 w-11 place-items-center rounded-full bg-gold-gradient shadow-gold overflow-hidden">
+            <img
+              src={img("logoVRN.webp")}
+              alt="Logo VRN"
+              className="h-full w-full object-contain"
+              loading="eager"
+            />
           </div>
           <div className="leading-tight">
             <div className="font-display text-[15px] sm:text-base font-bold text-white tracking-wide">
@@ -96,8 +101,13 @@ function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-3">
-              <div className="grid h-11 w-11 place-items-center rounded-full bg-gold-gradient">
-                <span className="font-display font-bold text-navy-dark text-lg">V</span>
+              <div className="grid h-11 w-11 place-items-center rounded-full bg-gold-gradient overflow-hidden">
+                <img
+                  src={img("logoVRN.webp")}
+                  alt="Logo VRN"
+                  className="h-full w-full object-contain"
+                  loading="eager"
+                />
               </div>
               <div>
                 <div className="font-display text-base font-bold text-white">{BRAND.name}</div>
