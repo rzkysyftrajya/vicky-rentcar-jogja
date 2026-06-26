@@ -465,7 +465,17 @@ export function Testimonials() {
     <section className="py-24 sm:py-32 bg-secondary relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8 relative">
-        <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <motion.div {...fade} className="text-center max-w-2xl mx-auto">
+          <div className="text-[11px] tracking-[0.3em] uppercase text-gold-dark font-semibold">
+            Galeri Testimoni
+          </div>
+          <h2 className="mt-3 font-display text-3xl sm:text-5xl font-bold text-navy leading-[1.1]">
+            Dipercaya oleh <span className="text-gradient-gold italic">ratusan pelanggan</span>
+          </h2>
+          <div className="gold-divider mx-auto mt-6" />
+        </motion.div>
+
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {images.map((src, i) => (
             <motion.div
               key={src}
