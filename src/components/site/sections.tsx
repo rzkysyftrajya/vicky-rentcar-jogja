@@ -464,7 +464,7 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 relative">
         <motion.div {...fade} className="text-center max-w-2xl mx-auto">
           <div className="text-[11px] tracking-[0.3em] uppercase text-gold-dark font-semibold">
-            Testimoni
+            Galeri Testimoni
           </div>
           <h2 className="mt-3 font-display text-3xl sm:text-5xl font-bold text-navy leading-[1.1]">
             Dipercaya oleh <span className="text-gradient-gold italic">ratusan pelanggan</span>
