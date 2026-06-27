@@ -1,14 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import {
-  MessageCircle,
-  ArrowRight,
-  Users,
-  MapPin,
-  ChevronDown,
-  Phone,
-  CheckCircle2,
-} from "lucide-react";
+import { ArrowRight, Users, MapPin, ChevronDown, Phone, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import {
   wa,
@@ -228,7 +220,7 @@ export function FleetGrid({ limit, showCta }: { limit?: number; showCta?: boolea
                   rel="noopener noreferrer"
                   className="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-navy hover:bg-navy-light text-white font-semibold py-3 text-sm transition group/btn"
                 >
-                  <MessageCircle className="h-4 w-4 text-gold" /> Tanya via WhatsApp
+                  <img src="/assets/icon/wa.webp" alt="" className="h-4 w-4" /> Tanya via WhatsApp
                   <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition" />
                 </a>
               </div>
@@ -440,7 +432,7 @@ export function Process({ showCta }: { showCta?: boolean }) {
             rel="noopener noreferrer"
             className="btn-whatsapp"
           >
-            <MessageCircle className="h-5 w-5" /> Mulai Booking Sekarang
+            <img src="/assets/icon/wa.webp" alt="" className="h-5 w-5" /> Mulai Booking Sekarang
           </a>
           {showCta && (
             <Link to="/cara-pemesanan" className="btn-outline-gold">
@@ -578,7 +570,7 @@ export function FAQList({ limit, showCta }: { limit?: number; showCta?: boolean 
                 rel="noopener noreferrer"
                 className="btn-whatsapp"
               >
-                <MessageCircle className="h-5 w-5" /> Tanya Sekarang
+                <img src="/assets/icon/wa.webp" alt="" className="h-5 w-5" /> Tanya Sekarang
               </a>
               {showCta && (
                 <Link to="/faq" className="btn-outline-gold">
@@ -663,7 +655,7 @@ export function FinalCTA() {
               rel="noopener noreferrer"
               className="btn-whatsapp !py-5 !px-9 !text-base"
             >
-              <MessageCircle className="h-6 w-6" /> WhatsApp Sekarang
+              <img src="/assets/icon/wa.webp" alt="" className="h-6 w-6" /> WhatsApp Sekarang
             </a>
             <a href={`tel:+${WA_NUMBER}`} className="btn-outline-gold !py-5 !px-8 !text-base">
               <Phone className="h-5 w-5" /> Telepon Kami

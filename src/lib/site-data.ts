@@ -211,18 +211,43 @@ export const services = [
 ];
 
 export const destinations = [
-  { name: "Candi Borobudur", region: "Magelang", img: "hero-car.jpg", span: "lg:row-span-2" },
-  { name: "Candi Prambanan", region: "Yogyakarta", img: "hero-car.jpg", span: "" },
-  { name: "Pantai Parangtritis", region: "Bantul", img: "hero-car.jpg", span: "" },
-  { name: "Malioboro", region: "Kota Yogyakarta", img: "hero-car.jpg", span: "" },
+  {
+    name: "Candi Borobudur",
+    region: "Magelang",
+    img: "destinasi/candi-borobudur.webp",
+    span: "lg:row-span-2",
+  },
+  {
+    name: "Candi Prambanan",
+    region: "Yogyakarta",
+    img: "destinasi/candi-prambanan.webp",
+    span: "",
+  },
+  {
+    name: "Pantai Parangtritis",
+    region: "Bantul",
+    img: "destinasi/pantai-parangtritis.webp",
+    span: "",
+  },
+  { name: "Malioboro", region: "Kota Yogyakarta", img: "destinasi/malioboro.webp", span: "" },
   {
     name: "Keraton Yogyakarta",
     region: "Kota Yogyakarta",
-    img: "hero-car.jpg",
+    img: "destinasi/keraton-yogyakarta.webp",
     span: "lg:row-span-2",
   },
-  { name: "HeHa Sky View", region: "Gunungkidul", img: "hero-car.jpg", span: "" },
-  { name: "Merapi Lava Tour", region: "Sleman", img: "hero-car.jpg", span: "" },
+  {
+    name: "HeHa Sky View",
+    region: "Gunungkidul",
+    img: "destinasi/heha-skyview.webp",
+    span: "",
+  },
+  {
+    name: "Merapi Lava Tour",
+    region: "Sleman",
+    img: "destinasi/merapi-lava-tour.webp",
+    span: "",
+  },
 ];
 
 export const testimonials = [

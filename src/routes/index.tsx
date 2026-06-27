@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MessageCircle, ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+
 import { Link } from "@tanstack/react-router";
 import { useRef } from "react";
 import heroCar from "@/assets/hero-car.jpg";
@@ -110,7 +111,7 @@ function Hero() {
               rel="noopener"
               className="btn-whatsapp"
             >
-              <MessageCircle className="h-5 w-5" /> Booking via WhatsApp
+              <img src="/assets/icon/wa.webp" alt="" className="h-5 w-5" /> Booking via WhatsApp
             </a>
             <Link to="/armada" className="btn-outline-gold">
               Lihat Armada <ArrowRight className="h-4 w-4" />
