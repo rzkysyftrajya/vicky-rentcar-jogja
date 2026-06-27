@@ -71,7 +71,7 @@ export function WhyUs() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-transparent to-transparent" />
               <div className="absolute bottom-7 left-7 right-7 text-white">
                 <div className="text-[10px] tracking-[0.3em] uppercase text-gold-light">
-                  Since 2015
+                  Since 2020
                 </div>
                 <div className="mt-2 font-display text-2xl font-bold">
                   Pengalaman premium rentcar
