@@ -26,7 +26,7 @@ export const Route = createFileRoute("/layanan")({
         title="Solusi transportasi"
         italic="untuk setiap momen"
         desc="Mulai dari antar jemput bandara, paket wisata, hingga kebutuhan korporat dan event — semua dengan standar premium."
-        image={img("1507003211169-0a1dd7228f2d", 1920, 1080)}
+        image={img("1507003211169-0a1dd7228f2d")}
       />
       <ServicesGrid />
       <FinalCTA />

@@ -8,6 +8,7 @@ const paket = [
   {
     judul: "Paket Borobudur–Prambanan",
     waktu: "1–2 Hari",
+
     dest: ["Candi Borobudur", "Candi Prambanan"],
     img: "destinasi/candi-borobudur.webp",
     desc: "Kunjungan ikon budaya Yogyakarta dengan itinerary fleksibel dan driver yang hafal rute.",
@@ -28,33 +29,7 @@ const paket = [
   },
 ] as const;
 
-// paketWisataMore sengaja tidak dipakai di home agar fokus premium pada 3 pilihan unggulan.
-const paketWisataMore = [
-  ...paket,
-  {
-    judul: "Paket Keraton–Malioboro",
-    waktu: "1 Hari",
-    dest: ["Keraton Yogyakarta", "Malioboro"],
-    img: "destinasi/keraton-yogyakarta.webp",
-    desc: "Jelajahi pusat budaya Yogyakarta dengan rute nyaman dan fleksibel.",
-  },
-  {
-    judul: "Paket HeHa–Bukit Selatan",
-    waktu: "1 Hari",
-    dest: ["HeHa Sky View", "Spot foto sekitar"],
-    img: "destinasi/heha-skyview.webp",
-    desc: "Liburan santai dengan spot selfie terbaik di wilayah Gunungkidul.",
-  },
-  {
-    judul: "Paket Borobudur Sunset",
-    waktu: "1 Hari",
-    dest: ["Borobudur", "Spot sunset"],
-    img: "destinasi/candi-borobudur.webp",
-    desc: "Opsi wisata spesial untuk momen sore hingga senja di sekitar Borobudur.",
-  },
-] as const;
-
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/paket-wisata")({
   head: () => ({
     meta: [
       { title: `Paket Wisata — ${BRAND.name}` },
@@ -91,19 +66,13 @@ export const Route = createFileRoute("/")({
             </h2>
             <div className="gold-divider mt-6" />
             <p className="mt-6 text-[15px] text-muted-foreground leading-relaxed">
-              Paket unggulan pilihan kami untuk Anda yang ingin liburan tanpa ribet. (Lihat halaman
-              Paket Wisata untuk opsi paket lainnya.)
-            </p>
-
-            <div className="mt-6 gold-divider" />
-            <p className="mt-6 text-[15px] text-muted-foreground leading-relaxed">
               Setiap paket bisa disesuaikan durasi, titik kumpul, dan preferensi destinasi.
               Konsultasi dulu, lalu kami bantu finalisasi itinerary.
             </p>
           </div>
 
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {paket.slice(0, 3).map((p) => (
+            {paket.map((p) => (
               <article
                 key={p.judul}
                 className="group overflow-hidden rounded-3xl bg-white border border-border hover:border-gold/40 transition-all duration-500 shadow-sm"

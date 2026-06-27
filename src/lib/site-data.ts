@@ -27,7 +27,9 @@ export const fade = {
 
 export const navLinks = [
   { to: "/", label: "Beranda" },
+  { to: "/paket-wisata", label: "Paket Wisata" },
   { to: "/armada", label: "Armada" },
+
   { to: "/layanan", label: "Layanan" },
   { to: "/destinasi", label: "Destinasi" },
   { to: "/cara-pemesanan", label: "Cara Pemesanan" },

@@ -26,7 +26,7 @@ export const Route = createFileRoute("/cara-pemesanan")({
         title="Booking mudah"
         italic="dalam 4 langkah"
         desc="Proses sederhana, respon cepat, dan harga transparan — Anda tinggal menikmati perjalanan."
-        image={img("1469854523086-cc02fe5d8800", 1920, 1080)}
+        image={img("1469854523086-cc02fe5d8800")}
       />
       <Process />
       <FAQList limit={4} showCta />

@@ -26,7 +26,7 @@ export const Route = createFileRoute("/armada")({
         title="Armada premium"
         italic="untuk setiap perjalanan"
         desc="Lebih dari 11 pilihan kendaraan terawat — dari city car hemat, MPV keluarga, SUV eksekutif, hingga Hiace rombongan."
-        image={img("1606664515524-ed2f786a0bd6", 1920, 1080)}
+        image={img("1606664515524-ed2f786a0bd6")}
       />
       <FleetGrid />
       <FinalCTA />

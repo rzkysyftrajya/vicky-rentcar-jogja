@@ -26,7 +26,7 @@ export const Route = createFileRoute("/destinasi")({
         title="Jelajahi keindahan"
         italic="Jogja bersama kami"
         desc="Dari ikon budaya hingga panorama alam, kami antar Anda ke destinasi favorit dengan armada nyaman dan driver yang hafal rute."
-        image={img("1596402184320-417e7178b2cd", 1920, 1080)}
+        image={img("1596402184320-417e7178b2cd")}
       />
       <DestinationsGrid />
       <FinalCTA />

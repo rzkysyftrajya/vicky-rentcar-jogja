@@ -53,7 +53,7 @@ function Nav() {
             href={wa("Halo Vicky, saya ingin tanya tentang rental mobil di Jogja.")}
             target="_blank"
             rel="noopener"
-            className="hidden sm:inline-flex btn-whatsapp !py-2.5 !px-5 !text-sm"
+            className="hidden sm:inline-flex btn-whatsapp py-2.5! !px-5 !text-sm"
           >
             <img src="/assets/icon/wa.webp" alt="" className="h-4 w-4" /> WhatsApp
           </a>

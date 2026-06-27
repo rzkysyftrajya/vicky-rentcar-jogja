@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PaketWisataRouteImport } from './routes/paket-wisata'
 import { Route as LayananRouteImport } from './routes/layanan'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DestinasiRouteImport } from './routes/destinasi'
@@ -16,6 +17,11 @@ import { Route as CaraPemesananRouteImport } from './routes/cara-pemesanan'
 import { Route as ArmadaRouteImport } from './routes/armada'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PaketWisataRoute = PaketWisataRouteImport.update({
+  id: '/paket-wisata',
+  path: '/paket-wisata',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LayananRoute = LayananRouteImport.update({
   id: '/layanan',
   path: '/layanan',
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/destinasi': typeof DestinasiRoute
   '/faq': typeof FaqRoute
   '/layanan': typeof LayananRoute
+  '/paket-wisata': typeof PaketWisataRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/destinasi': typeof DestinasiRoute
   '/faq': typeof FaqRoute
   '/layanan': typeof LayananRoute
+  '/paket-wisata': typeof PaketWisataRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/destinasi': typeof DestinasiRoute
   '/faq': typeof FaqRoute
   '/layanan': typeof LayananRoute
+  '/paket-wisata': typeof PaketWisataRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,8 +90,16 @@ export interface FileRouteTypes {
     | '/destinasi'
     | '/faq'
     | '/layanan'
+    | '/paket-wisata'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/armada' | '/cara-pemesanan' | '/destinasi' | '/faq' | '/layanan'
+  to:
+    | '/'
+    | '/armada'
+    | '/cara-pemesanan'
+    | '/destinasi'
+    | '/faq'
+    | '/layanan'
+    | '/paket-wisata'
   id:
     | '__root__'
     | '/'
@@ -91,6 +108,7 @@ export interface FileRouteTypes {
     | '/destinasi'
     | '/faq'
     | '/layanan'
+    | '/paket-wisata'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -100,10 +118,18 @@ export interface RootRouteChildren {
   DestinasiRoute: typeof DestinasiRoute
   FaqRoute: typeof FaqRoute
   LayananRoute: typeof LayananRoute
+  PaketWisataRoute: typeof PaketWisataRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/paket-wisata': {
+      id: '/paket-wisata'
+      path: '/paket-wisata'
+      fullPath: '/paket-wisata'
+      preLoaderRoute: typeof PaketWisataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/layanan': {
       id: '/layanan'
       path: '/layanan'
@@ -156,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   DestinasiRoute: DestinasiRoute,
   FaqRoute: FaqRoute,
   LayananRoute: LayananRoute,
+  PaketWisataRoute: PaketWisataRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
