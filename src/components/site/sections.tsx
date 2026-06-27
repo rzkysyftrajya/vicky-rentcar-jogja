@@ -86,7 +86,7 @@ export function WhyUs() {
               className="hidden sm:block absolute -bottom-8 -right-8 w-56 rounded-2xl overflow-hidden shadow-luxe border-4 border-background"
             >
               <img
-                src={img("1583121274602-3e2820c69888")}
+                src={img("hero.webp")}
                 alt="Interior mewah"
                 className="w-full h-44 object-cover"
                 loading="lazy"
