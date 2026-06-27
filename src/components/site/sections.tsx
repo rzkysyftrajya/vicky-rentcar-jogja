@@ -78,23 +78,6 @@ export function WhyUs() {
                 </div>
               </div>
             </div>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.7 }}
-              className="hidden sm:block absolute -bottom-6 -right-8 w-56 rounded-2xl overflow-hidden shadow-luxe border-4 border-background"
-            >
-              <div className="relative w-[420px] max-w-[420px] aspect-[4/3] mx-auto overflow-hidden rounded-2xl">
-                <img
-                  src={img("hero.webp")}
-                  alt="Interior mewah"
-                  className="absolute inset-0 w-full h-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-              <style>{`@keyframes heroSlideFromRightToLeft{0%{transform:translateX(20%)}100%{transform:translateX(-20%)}}`}</style>
-            </motion.div>
           </motion.div>
 
           <motion.div {...fade}>
