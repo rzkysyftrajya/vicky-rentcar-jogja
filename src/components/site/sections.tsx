@@ -61,14 +61,14 @@ export function WhyUs() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div {...fade} className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-luxe aspect-[4/5]">
+            <div className="relative rounded-3xl overflow-hidden shadow-luxe aspect-4/5">
               <img
                 src={img("section-home.webp")}
                 alt="Pengalaman premium rentcar"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-navy-dark/80 via-transparent to-transparent" />
               <div className="absolute bottom-7 left-7 right-7 text-white">
                 <div className="text-[10px] tracking-[0.3em] uppercase text-gold-light">
                   Since 2020
@@ -84,7 +84,14 @@ export function WhyUs() {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.7 }}
               className="hidden sm:block absolute -bottom-6 -right-8 w-56 rounded-2xl overflow-hidden shadow-luxe border-4 border-background"
-            ></motion.div>
+            >
+              <img
+                src={img("hero.webp")}
+                alt="Interior mewah"
+                className="w-full h-44 object-cover"
+                loading="lazy"
+              />
+            </motion.div>
           </motion.div>
 
           <motion.div {...fade}>
@@ -166,14 +173,14 @@ export function FleetGrid({ limit, showCta }: { limit?: number; showCta?: boolea
               transition={{ delay: (i % 3) * 0.08, duration: 0.6 }}
               className="group relative rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-luxe transition-all duration-500"
             >
-              <div className="relative aspect-[644/911] overflow-hidden bg-navy-dark">
+              <div className="relative aspect-644/911 overflow-hidden bg-navy-dark">
                 <img
                   src={img(v.img)}
                   alt={v.name}
                   className="absolute inset-0 h-full w-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/70 via-navy-dark/10 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-navy-dark/70 via-navy-dark/10 to-transparent" />
                 <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 px-3 py-1">
                   <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-white">
                     {v.transmission}
@@ -267,11 +274,11 @@ export function ServicesGrid({ showCta }: { showCta?: boolean }) {
               <img
                 src={img(s.img)}
                 alt={s.title}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-110"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-1500 group-hover:scale-110"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/40 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gold/10 opacity-0 group-hover:opacity-100 transition duration-500" />
+              <div className="absolute inset-0 bg-linear-to-t from-navy-dark via-navy-dark/40 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-gold/10 opacity-0 group-hover:opacity-100 transition duration-500" />
               <div className="absolute bottom-0 inset-x-0 p-6 sm:p-7">
                 <div
                   className={`font-display font-bold text-white ${s.size === "lg" ? "text-2xl sm:text-3xl" : "text-xl"}`}
@@ -288,7 +295,7 @@ export function ServicesGrid({ showCta }: { showCta?: boolean }) {
         </div>
 
         <div className="mt-14 text-center flex flex-wrap items-center justify-center gap-4">
-          <div className="inline-block rounded-full border border-gold/30 bg-white/[0.04] backdrop-blur px-6 py-3 text-sm">
+          <div className="inline-block rounded-full border border-gold/30 bg-white/4 backdrop-blur px-6 py-3 text-sm">
             <span className="text-white/70">Semua layanan: </span>
             <span className="font-semibold text-gold">Hubungi Kami untuk Detail Harga</span>
           </div>
@@ -341,10 +348,10 @@ export function DestinationsGrid({ limit, showCta }: { limit?: number; showCta?:
               <img
                 src={img(d.img)}
                 alt={d.name}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-100"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-1500 group-hover:scale-100"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/30 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-navy-dark via-navy-dark/30 to-transparent" />
               <div className="absolute top-5 right-5 inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 px-3 py-1.5">
                 <MapPin className="h-3 w-3 text-gold" />
                 <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-white">
@@ -404,7 +411,7 @@ export function Process({ showCta }: { showCta?: boolean }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="relative rounded-3xl bg-white/[0.04] backdrop-blur-xl border border-white/10 p-7 hover:border-gold/40 transition-all duration-500 hover:-translate-y-1"
+              className="relative rounded-3xl bg-white/4 backdrop-blur-xl border border-white/10 p-7 hover:border-gold/40 transition-all duration-500 hover:-translate-y-1"
             >
               <div className="font-display text-6xl font-bold text-gradient-gold leading-none">
                 {s.n}
@@ -452,7 +459,7 @@ export function Testimonials() {
 
   return (
     <section className="py-24 sm:py-32 bg-secondary relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl" />
+      <div className="absolute top-0 right-0 w-125500px] rounded-full bg-gold/5 blur-3xl" />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 relative mb-14">
         <motion.div {...fade} className="text-center max-w-2xl mx-auto">
@@ -481,7 +488,7 @@ export function Testimonials() {
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-navy-dark/40 via-transparent to-transparent" />
             </div>
           ))}
         </div>
@@ -499,7 +506,7 @@ export function Testimonials() {
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-navy-dark/40 via-transparent to-transparent" />
             </div>
           ))}
         </div>
@@ -517,7 +524,7 @@ export function Testimonials() {
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-navy-dark/40 via-transparent to-transparent" />
             </div>
           ))}
         </div>
@@ -618,7 +625,7 @@ export function FinalCTA() {
         className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/85 to-navy-dark/60" />
+      <div className="absolute inset-0 bg-linear-to-r from-navy-dark via-navy-dark/85 to-navy-dark/60" />
       <div
         className="absolute inset-0"
         style={{
@@ -627,7 +634,7 @@ export function FinalCTA() {
       />
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8 text-white">
         <motion.div {...fade} className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white/[0.04] backdrop-blur px-4 py-1.5 mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white/4 backdrop-blur px-4 py-1.5 mb-6">
             <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
             <span className="text-[11px] font-medium tracking-[0.25em] uppercase text-gold-light">
               Tersedia 24/7
@@ -646,11 +653,11 @@ export function FinalCTA() {
               href={wa("Halo Vicky, saya ingin booking rental mobil + driver di Jogja.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-whatsapp !py-5 !px-9 !text-base"
+              className="btn-whatsapp py-5! px-9! text-base!"
             >
               <img src="/assets/icon/wa.webp" alt="" className="h-6 w-6" /> WhatsApp Sekarang
             </a>
-            <a href={`tel:+${WA_NUMBER}`} className="btn-outline-gold !py-5 !px-8 !text-base">
+            <a href={`tel:+${WA_NUMBER}`} className="btn-outline-gold py-5! px-8! text-base!">
               <Phone className="h-5 w-5" /> Telepon Kami
             </a>
           </div>
