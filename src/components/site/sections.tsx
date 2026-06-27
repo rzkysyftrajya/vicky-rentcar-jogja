@@ -83,15 +83,8 @@ export function WhyUs() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.7 }}
-              className="hidden sm:block absolute -bottom-8 -right-8 w-56 rounded-2xl overflow-hidden shadow-luxe border-4 border-background"
-            >
-              <img
-                src={img("hero.webp")}
-                alt="Interior mewah"
-                className="w-full h-44 object-cover"
-                loading="lazy"
-              />
-            </motion.div>
+              className="hidden sm:block absolute -bottom-6 -right-8 w-56 rounded-2xl overflow-hidden shadow-luxe border-4 border-background"
+            ></motion.div>
           </motion.div>
 
           <motion.div {...fade}>
