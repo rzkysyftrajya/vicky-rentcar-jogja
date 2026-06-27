@@ -63,7 +63,7 @@ export function WhyUs() {
           <motion.div {...fade} className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-luxe aspect-[4/5]">
               <img
-                src={img("1494976388531-d1058494cdd8")}
+                src={img("section-home.webp")}
                 alt="Pengalaman premium rentcar"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
