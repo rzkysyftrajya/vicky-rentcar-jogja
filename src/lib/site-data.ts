@@ -1,6 +1,13 @@
 export const WA_NUMBER = "82363389893";
 
-export const wa = (msg: string) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+const WA_PREFIX = "Halo Vicky rentcar jogja";
+
+export const wa = (msg: string) => {
+  const text = msg.trim();
+  const needsPrefix = text.length === 0 || !text.toLowerCase().startsWith(WA_PREFIX.toLowerCase());
+  const finalMsg = needsPrefix ? `${WA_PREFIX}. ${text}` : text;
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(finalMsg)}`;
+};
 
 // Diubah agar langsung mengarah ke folder lokal src/assets
 export const img = (path: string) => `/assets/${path}`;
