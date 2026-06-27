@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+
 import { useEffect, useState, type ReactNode } from "react";
+
 import { BRAND, WA_NUMBER, wa, navLinks, img } from "@/lib/site-data";
 
 function Nav() {
@@ -53,7 +55,7 @@ function Nav() {
             rel="noopener"
             className="hidden sm:inline-flex btn-whatsapp !py-2.5 !px-5 !text-sm"
           >
-            <MessageCircle className="h-4 w-4" /> WhatsApp
+            <img src="/assets/icon/wa.webp" alt="" className="h-4 w-4" /> WhatsApp
           </a>
           <button
             onClick={() => setOpen(!open)}
@@ -141,7 +143,11 @@ function Footer() {
             <div className="gold-divider mt-3 mb-5" />
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2.5">
-                <MessageCircle className="h-4 w-4 text-gold mt-0.5 shrink-0" />
+                <img
+                  src="/assets/icon/wa.webp"
+                  alt=""
+                  className="h-4 w-4 text-gold mt-0.5 shrink-0"
+                />
                 <a
                   href={wa("Halo Vicky, saya ingin tanya tentang rental mobil.")}
                   target="_blank"
@@ -180,7 +186,7 @@ function Footer() {
               rel="noopener"
               className="btn-whatsapp !py-3 !px-5 !text-sm w-full"
             >
-              <MessageCircle className="h-4 w-4" /> Chat WhatsApp
+              <img src="/assets/icon/wa.webp" alt="" className="h-4 w-4" /> Chat WhatsApp
             </a>
           </div>
         </div>
@@ -205,7 +211,7 @@ function FloatingWA() {
       className="hidden sm:flex fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full bg-whatsapp hover:bg-whatsapp-dark items-center justify-center shadow-2xl transition hover:scale-110"
     >
       <span className="absolute inset-0 rounded-full bg-whatsapp animate-ping opacity-30" />
-      <MessageCircle className="relative h-7 w-7 text-white" />
+      <img src="/assets/icon/wa.webp" alt="" className="relative h-7 w-7" />
     </a>
   );
 }
@@ -226,7 +232,7 @@ function StickyMobileCTA() {
           rel="noopener"
           className="flex-1 flex items-center justify-center gap-2 rounded-full bg-whatsapp text-white font-semibold py-3 text-sm"
         >
-          <MessageCircle className="h-4 w-4" /> WhatsApp Sekarang
+          <img src="/assets/icon/wa.webp" alt="" className="h-4 w-4" /> WhatsApp Sekarang
         </a>
       </div>
     </div>
