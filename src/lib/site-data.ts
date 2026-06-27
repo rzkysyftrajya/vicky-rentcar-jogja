@@ -184,38 +184,97 @@ export const services = [
   {
     title: "Premium Rentcar",
     desc: "Rental mobil + driver profesional untuk perjalanan harian, mingguan, atau bulanan.",
-    img: "section-premium-rentcar.webp", // Menggunakan hero-car lokal sebagai fallback
+    img: "/layanan/section-premium-rentcar.webp", // Menggunakan hero-car lokal sebagai fallback
     size: "lg" as const,
   },
   {
     title: "Antar Jemput Bandara YIA",
     desc: "Penjemputan tepat waktu di Bandara YIA & Adisutjipto dengan meet & greet.",
-    img: "antar-jemput-bandara-yia.webp",
+    img: "/layanan/antar-jemput-bandara-yia.webp",
     size: "sm" as const,
   },
   {
     title: "Paket Wisata Jogja",
     desc: "Paket wisata fleksibel ke seluruh objek wisata Yogyakarta.",
-    img: "paket-wisata-jogja.webp",
+    img: "/layanan/paket-wisata-jogja.webp",
     size: "sm" as const,
   },
   {
     title: "Perjalanan Korporat",
     desc: "Layanan profesional untuk perjalanan dinas, meeting, dan kunjungan kerja.",
-    img: "perjalanan-korporat.webp",
+    img: "/layanan/perjalanan-korporat.webp",
     size: "sm" as const,
   },
   {
     title: "Family Trip",
     desc: "Armada lega dan nyaman untuk liburan keluarga, reuni, dan acara.",
-    img: "family-trip.webp",
+    img: "/layanan/family-trip.webp",
     size: "sm" as const,
   },
   {
     title: "Wedding & Event",
     desc: "Solusi transportasi untuk wedding, gathering, dan corporate event.",
-    img: "paket-wedding.webp",
+    img: "/layanan/paket-wedding.webp",
     size: "lg" as const,
+  },
+];
+
+export const paketWisataFeatured = [
+  {
+    judul: "Paket Borobudur–Prambanan",
+    waktu: "1–2 Hari",
+    dest: ["Candi Borobudur", "Candi Prambanan"],
+    img: "destinasi/candi-borobudur.webp",
+    desc: "Kunjungan ikon budaya Yogyakarta dengan itinerary fleksibel dan driver yang hafal rute.",
+  },
+  {
+    judul: "Paket Merapi Lava Tour",
+    waktu: "1–2 Hari",
+    dest: ["Merapi Lava Tour", "Sleman area"],
+    img: "destinasi/merapi-lava-tour.webp",
+    desc: "Sensasi wisata Merapi dengan pengalaman aman, nyaman, dan terarah.",
+  },
+  {
+    judul: "Paket Selatan: Parangtritis–HeHa",
+    waktu: "1 Hari",
+    dest: ["Pantai Parangtritis", "HeHa Sky View"],
+    img: "destinasi/heha-skyview.webp",
+    desc: "Eksplor panorama selatan Jogja untuk momen liburan yang berkesan.",
+  },
+  {
+    judul: "Paket Kraton & Malioboro Night Walk",
+    waktu: "1 Hari",
+    dest: ["Keraton Yogyakarta", "Malioboro"],
+    img: "destinasi/keraton-yogyakarta.webp",
+    desc: "Rasakan nuansa budaya Jawa di Keraton, lalu lanjut jelajah kuliner dan suasana malam di Malioboro.",
+  },
+  {
+    judul: "Paket Kota Heritage: Taman Sari–Kotagede",
+    waktu: "1 Hari",
+    dest: ["Kota Yogyakarta"],
+    img: "destinasi/malioboro.webp",
+    desc: "Gaya jelajah santai: spot ikonik kota, bangunan bersejarah, dan rekomendasi kuliner lokal sesuai preferensi Anda.",
+  },
+  {
+    judul: "Paket Sunset Pantai Parangtritis",
+    waktu: "1 Hari",
+    dest: ["Pantai Parangtritis"],
+    img: "destinasi/pantai-parangtritis.webp",
+    desc: "Fokus menikmati panorama selatan—jadwal fleksibel untuk momen sunset terbaik dengan driver berpengalaman.",
+  },
+  {
+    judul: "Paket Borobudur Premium (Sunrise Option)",
+    waktu: "1 Hari",
+    dest: ["Candi Borobudur"],
+    img: "destinasi/candi-borobudur.webp",
+    desc: "Varian lebih praktis untuk menikmati Borobudur, dengan opsi early schedule agar lebih nyaman dan tidak tergesa.",
+  },
+  {
+    judul: "Paket Keraton + HeHa View",
+    waktu: "1 Hari",
+    dest: ["Keraton Yogyakarta", "HeHa Sky View"],
+    img: "destinasi/heha-skyview.webp",
+    desc: "Kombinasi budaya dan pemandangan: diawali aktivitas di pusat budaya, diakhiri view spektakuler dari ketinggian.",
   },
 ];
 

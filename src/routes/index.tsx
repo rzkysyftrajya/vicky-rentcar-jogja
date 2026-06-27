@@ -1,190 +1,147 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { FinalCTA } from "@/components/site/sections";
-import { img, BRAND, wa } from "@/lib/site-data";
-import { ArrowRight, MapPin } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { useRef } from "react";
 
-const paket = [
-  {
-    judul: "Paket Borobudur–Prambanan",
-    waktu: "1–2 Hari",
-    dest: ["Candi Borobudur", "Candi Prambanan"],
-    img: "destinasi/candi-borobudur.webp",
-    desc: "Kunjungan ikon budaya Yogyakarta dengan itinerary fleksibel dan driver yang hafal rute.",
-  },
-  {
-    judul: "Paket Merapi Lava Tour",
-    waktu: "1–2 Hari",
-    dest: ["Merapi Lava Tour", "Sleman area"],
-    img: "destinasi/merapi-lava-tour.webp",
-    desc: "Sensasi wisata Merapi dengan pengalaman aman, nyaman, dan terarah.",
-  },
-  {
-    judul: "Paket Selatan: Parangtritis–HeHa",
-    waktu: "1 Hari",
-    dest: ["Pantai Parangtritis", "HeHa Sky View"],
-    img: "destinasi/heha-skyview.webp",
-    desc: "Eksplor panorama selatan Jogja untuk momen liburan yang berkesan.",
-  },
-] as const;
-
-// paketWisataMore sengaja tidak dipakai di home agar fokus premium pada 3 pilihan unggulan.
-const paketWisataMore = [
-  ...paket,
-  {
-    judul: "Paket Keraton–Malioboro",
-    waktu: "1 Hari",
-    dest: ["Keraton Yogyakarta", "Malioboro"],
-    img: "destinasi/keraton-yogyakarta.webp",
-    desc: "Jelajahi pusat budaya Yogyakarta dengan rute nyaman dan fleksibel.",
-  },
-  {
-    judul: "Paket HeHa–Bukit Selatan",
-    waktu: "1 Hari",
-    dest: ["HeHa Sky View", "Spot foto sekitar"],
-    img: "destinasi/heha-skyview.webp",
-    desc: "Liburan santai dengan spot selfie terbaik di wilayah Gunungkidul.",
-  },
-  {
-    judul: "Paket Borobudur Sunset",
-    waktu: "1 Hari",
-    dest: ["Borobudur", "Spot sunset"],
-    img: "destinasi/candi-borobudur.webp",
-    desc: "Opsi wisata spesial untuk momen sore hingga senja di sekitar Borobudur.",
-  },
-] as const;
+import heroCar from "@/assets/hero-car.jpg";
+import { wa, fade, BRAND } from "@/lib/site-data";
+import { SiteLayout } from "@/components/site/SiteLayout";
+import {
+  TrustStrip,
+  WhyUs,
+  FleetGrid,
+  ServicesGrid,
+  PaketWisataGrid,
+  DestinationsGrid,
+  Process,
+  Testimonials,
+  FAQList,
+  FinalCTA,
+} from "@/components/site/sections";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: `Paket Wisata — ${BRAND.name}` },
+      { title: `${BRAND.name} — Premium Rentcar + Driver Profesional di Jogja` },
       {
         name: "description",
         content:
-          "Paket wisata Jogja fleksibel ke ikon budaya dan panorama alam. Booking via WhatsApp dengan driver profesional.",
+          "Layanan rental mobil premium dengan driver profesional di Yogyakarta. Wisata Jogja, antar jemput Bandara YIA, perjalanan eksekutif. Booking via WhatsApp.",
       },
-      { property: "og:title", content: `Paket Wisata Jogja — ${BRAND.name}` },
+      { property: "og:title", content: `${BRAND.name} — Premium Rentcar Jogja` },
       {
         property: "og:description",
-        content: "Paket wisata fleksibel ke destinasi favorit Yogyakarta.",
+        content: "Layanan transportasi premium, nyaman, dan terpercaya di Yogyakarta.",
       },
     ],
   }),
-  component: () => (
+  component: Landing,
+});
+
+function Landing() {
+  return (
     <SiteLayout>
-      <PageHero
-        eyebrow="Paket Wisata"
-        title="Pilih paket"
-        italic="sesuai gaya liburan Anda"
-        desc="Kami susun itinerary yang rapi, driver berpengalaman, dan armada nyaman. Tinggal konsultasi via WhatsApp — kami bantu sesuaikan jadwal dan kebutuhan rombongan."
-        image={img("section-home.webp")}
-      />
-
-      <section className="py-20 sm:py-28 bg-background">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="max-w-2xl">
-            <div className="text-[11px] tracking-[0.3em] uppercase text-gold-dark font-semibold">
-              Paket Unggulan
-            </div>
-            <h2 className="mt-3 font-display text-3xl sm:text-5xl font-bold text-navy leading-[1.1]">
-              Rekomendasi <span className="text-gradient-gold italic">perjalanan</span> terbaik
-            </h2>
-            <div className="gold-divider mt-6" />
-            <p className="mt-6 text-[15px] text-muted-foreground leading-relaxed">
-              Paket unggulan pilihan kami untuk Anda yang ingin liburan tanpa ribet. (Lihat halaman
-              Paket Wisata untuk opsi paket lainnya.)
-            </p>
-
-            <div className="mt-6 gold-divider" />
-            <p className="mt-6 text-[15px] text-muted-foreground leading-relaxed">
-              Setiap paket bisa disesuaikan durasi, titik kumpul, dan preferensi destinasi.
-              Konsultasi dulu, lalu kami bantu finalisasi itinerary.
-            </p>
-          </div>
-
-          <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {paket.slice(0, 3).map((p) => (
-              <article
-                key={p.judul}
-                className="group overflow-hidden rounded-3xl bg-white border border-border hover:border-gold/40 transition-all duration-500 shadow-sm"
-              >
-                <div className="relative aspect-[16/10] bg-navy-dark/5 overflow-hidden">
-                  <img
-                    src={img(p.img)}
-                    alt={p.judul}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-navy-dark/70 via-navy-dark/10 to-transparent" />
-                  <div className="absolute top-5 left-5 inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 px-4 py-2">
-                    <MapPin className="h-3.5 w-3.5 text-gold" />
-                    <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-white">
-                      {p.waktu}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="font-display text-2xl font-bold text-navy">{p.judul}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {p.dest.map((d) => (
-                      <span
-                        key={d}
-                        className="inline-flex items-center rounded-full bg-navy-dark/5 border border-border px-3 py-1 text-xs font-semibold text-navy"
-                      >
-                        {d}
-                      </span>
-                    ))}
-                  </div>
-
-                  <a
-                    href={wa(`Halo Vicky, saya ingin booking ${p.judul} (${p.waktu}).`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-full bg-navy hover:bg-navy-light text-white font-semibold py-3 text-sm transition group/btn"
-                  >
-                    <img src="/assets/icon/wa.webp" alt="" className="h-4 w-4" />
-                    Booking via WhatsApp
-                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition" />
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-14 rounded-3xl bg-navy-dark text-white overflow-hidden relative">
-            <div className="absolute inset-0 bg-linear-to-r from-gold/15 via-transparent to-transparent" />
-            <div className="relative p-8 sm:p-10">
-              <div className="text-[11px] tracking-[0.3em] uppercase text-gold-light font-semibold">
-                Tidak cocok dengan paket di atas?
-              </div>
-              <h3 className="mt-3 font-display text-3xl sm:text-4xl font-bold leading-[1.1]">
-                Kami bisa buat itinerary <span className="text-gradient-gold italic">custom</span>
-              </h3>
-              <p className="mt-5 text-[15px] text-white/70 leading-relaxed max-w-2xl">
-                Sebutkan destinasi, tanggal, jumlah penumpang, dan durasi. Tim kami akan bantu susun
-                rute paling nyaman dan efisien.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={wa("Halo Vicky, saya ingin itinerary custom paket wisata.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp !py-4 !px-7"
-                >
-                  <img src="/assets/icon/wa.webp" alt="" className="h-5 w-5" />
-                  Buat Itinerary Custom
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Hero />
+      <TrustStrip />
+      <WhyUs />
+      <FleetGrid limit={6} showCta />
+      <ServicesGrid showCta />
+      <PaketWisataGrid limit={3} showCta />
+      <DestinationsGrid limit={4} showCta />
+      <Process showCta />
+      <Testimonials />
+      <FAQList limit={4} showCta />
       <FinalCTA />
     </SiteLayout>
-  ),
-});
+  );
+}
+
+function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  return (
+    <section ref={ref} id="top" className="relative min-h-[100svh] overflow-hidden bg-navy-dark">
+      <motion.div style={{ y, scale: 1.05 }} className="absolute inset-0">
+        <img
+          src={heroCar}
+          alt={`Armada premium ${BRAND.name} di Yogyakarta`}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </motion.div>
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/60 to-navy-dark/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/70 to-transparent" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(circle at 70% 50%, rgba(212,175,55,0.18), transparent 60%)",
+        }}
+      />
+
+      <motion.div
+        style={{ opacity }}
+        className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 pt-32 pb-24 min-h-[100svh] flex flex-col justify-center"
+      >
+        <motion.div {...fade} className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/[0.04] backdrop-blur-md px-4 py-1.5 mb-7">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+            <span className="text-[11px] font-medium tracking-[0.25em] uppercase text-gold-light">
+              Premium Rentcar · Yogyakarta
+            </span>
+          </div>
+
+          <h1 className="font-display text-white text-[2.4rem] sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-bold leading-[1.02] tracking-tight">
+            Perjalanan Tanpa Repot.
+            <br />
+            <span className="text-gradient-gold italic font-medium">Berkelas</span> di Setiap
+            <br />
+            Sudut Jogja.
+          </h1>
+
+          <p className="mt-7 text-base sm:text-lg text-white/75 max-w-xl leading-relaxed font-light">
+            {BRAND.name} — rental mobil premium dengan driver profesional. Dirancang untuk
+            wisatawan, eksekutif, dan keluarga yang mengutamakan kenyamanan dan keandalan.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            <a
+              href={wa("Halo Vicky, saya ingin booking rental mobil + driver di Jogja.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-whatsapp"
+            >
+              <img src="/assets/icon/wa.webp" alt="" className="h-5 w-5" />
+              Booking via WhatsApp
+            </a>
+            <Link to="/armada" className="btn-outline-gold">
+              Lihat Armada <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mt-14 grid grid-cols-3 gap-6 sm:gap-10 max-w-lg">
+            {[
+              { n: "500+", l: "Pelanggan Puas" },
+              { n: "11+", l: "Armada Premium" },
+              { n: "24/7", l: "Concierge" },
+            ].map((s) => (
+              <div key={s.l}>
+                <div className="font-display text-2xl sm:text-4xl font-bold text-white">{s.n}</div>
+                <div className="text-[10px] sm:text-xs tracking-[0.18em] uppercase text-white/50 mt-1">
+                  {s.l}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/40 text-[10px] hidden sm:flex flex-col items-center gap-2 tracking-[0.4em] uppercase">
+        Scroll
+        <ChevronDown className="h-4 w-4 animate-bounce" />
+      </div>
+    </section>
+  );
+}

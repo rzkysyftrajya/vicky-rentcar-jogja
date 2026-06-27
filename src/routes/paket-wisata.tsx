@@ -27,6 +27,41 @@ const paket = [
     img: "destinasi/heha-skyview.webp",
     desc: "Eksplor panorama selatan Jogja untuk momen liburan yang berkesan.",
   },
+  {
+    judul: "Paket Kraton & Malioboro Night Walk",
+    waktu: "1 Hari",
+    dest: ["Keraton Yogyakarta", "Malioboro"],
+    img: "destinasi/keraton-yogyakarta.webp",
+    desc: "Rasakan nuansa budaya Jawa di Keraton, lalu lanjut jelajah kuliner dan suasana malam di Malioboro.",
+  },
+  {
+    judul: "Paket Kota Heritage: Taman Sari–Kotagede",
+    waktu: "1 Hari",
+    dest: ["Kota Yogyakarta"],
+    img: "destinasi/malioboro.webp",
+    desc: "Gaya jelajah santai: spot ikonik kota, bangunan bersejarah, dan rekomendasi kuliner lokal sesuai preferensi Anda.",
+  },
+  {
+    judul: "Paket Sunset Pantai Parangtritis",
+    waktu: "1 Hari",
+    dest: ["Pantai Parangtritis"],
+    img: "destinasi/pantai-parangtritis.webp",
+    desc: "Fokus menikmati panorama selatan—jadwal fleksibel untuk momen sunset terbaik dengan driver berpengalaman.",
+  },
+  {
+    judul: "Paket Borobudur Premium (Sunrise Option)",
+    waktu: "1 Hari",
+    dest: ["Candi Borobudur"],
+    img: "destinasi/candi-borobudur.webp",
+    desc: "Varian lebih praktis untuk menikmati Borobudur, dengan opsi early schedule agar lebih nyaman dan tidak tergesa.",
+  },
+  {
+    judul: "Paket Keraton + HeHa View",
+    waktu: "1 Hari",
+    dest: ["Keraton Yogyakarta", "HeHa Sky View"],
+    img: "destinasi/heha-skyview.webp",
+    desc: "Kombinasi budaya dan pemandangan: diawali aktivitas di pusat budaya, diakhiri view spektakuler dari ketinggian.",
+  },
 ] as const;
 
 export const Route = createFileRoute("/paket-wisata")({

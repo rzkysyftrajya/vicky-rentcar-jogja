@@ -9,6 +9,7 @@ import {
   fleet,
   services,
   destinations,
+  paketWisataFeatured,
   faqs,
   processSteps,
   WA_NUMBER,
@@ -291,6 +292,96 @@ export function ServicesGrid({ showCta }: { showCta?: boolean }) {
             </Link>
           )}
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function PaketWisataGrid({ limit, showCta }: { limit?: number; showCta?: boolean }) {
+  const list = limit ? paketWisataFeatured.slice(0, limit) : paketWisataFeatured;
+
+  return (
+    <section id="paket-wisata" className="py-24 sm:py-32 bg-background">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
+          <motion.div {...fade} className="max-w-2xl">
+            <div className="text-[11px] tracking-[0.3em] uppercase text-gold-dark font-semibold">
+              Paket Wisata
+            </div>
+            <h2 className="mt-3 font-display text-3xl sm:text-5xl font-bold text-navy leading-[1.1]">
+              Paket wisata yang <span className="text-gradient-gold italic">siap jalan</span>
+            </h2>
+            <div className="gold-divider mt-6" />
+          </motion.div>
+          <p className="text-[15px] text-muted-foreground max-w-md leading-relaxed">
+            Tentukan gaya liburan Anda—kami susun itinerary rapi, driver berpengalaman, dan armada
+            nyaman. Booking via WhatsApp.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {list.map((p, i) => (
+            <motion.article
+              key={p.judul}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: (i % 3) * 0.08, duration: 0.6 }}
+              className="group overflow-hidden rounded-3xl bg-white border border-border hover:border-gold/40 transition-all duration-500 shadow-sm"
+            >
+              <div className="relative aspect-[16/10] bg-navy-dark/5 overflow-hidden">
+                <img
+                  src={img(p.img)}
+                  alt={p.judul}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-navy-dark/70 via-navy-dark/10 to-transparent" />
+                <div className="absolute top-5 left-5 inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 px-4 py-2">
+                  <MapPin className="h-3.5 w-3.5 text-gold" />
+                  <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-white">
+                    {p.waktu}
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-6">
+                <h3 className="font-display text-2xl font-bold text-navy">{p.judul}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {p.dest.map((d) => (
+                    <span
+                      key={d}
+                      className="inline-flex items-center rounded-full bg-navy-dark/5 border border-border px-3 py-1 text-xs font-semibold text-navy"
+                    >
+                      {d}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={wa(`Halo Vicky, saya ingin booking ${p.judul} (${p.waktu}).`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-full bg-navy hover:bg-navy-light text-white font-semibold py-3 text-sm transition group/btn"
+                >
+                  <img src="/assets/icon/wa.webp" alt="" className="h-4 w-4" />
+                  Booking via WhatsApp
+                  <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition" />
+                </a>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        {showCta && (
+          <div className="mt-14 text-center">
+            <Link to="/paket-wisata" className="btn-gold">
+              Lihat Semua Paket Wisata <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
