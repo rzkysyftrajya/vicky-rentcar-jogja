@@ -85,7 +85,7 @@ export function WhyUs() {
               transition={{ delay: 0.3, duration: 0.7 }}
               className="hidden sm:block absolute -bottom-6 -right-8 w-56 rounded-2xl overflow-hidden shadow-luxe border-4 border-background"
             >
-              <div className="relative w-[420px] h-[594px] max-w-[420px] mx-auto overflow-hidden rounded-2xl">
+              <div className="relative w-[420px] max-w-[420px] aspect-[4/3] mx-auto overflow-hidden rounded-2xl">
                 <img
                   src={img("hero.webp")}
                   alt="Interior mewah"
