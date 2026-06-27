@@ -1,11 +1,8 @@
 # TODO
 
-## Vicky Rentcar Jogja
-
-- [x] Update repository so code is pushed to GitHub
-- [ ] Fix assets rendering di Vercel
-  - [x] Buat folder `public/assets`
-  - [x] Pindahkan `src/assets/*` ke `public/assets/*`
-  - [x] Ubah helper `img()` di `src/lib/site-data.ts` dari `/src/assets/...` ke `/assets/...`
-  - [x] Commit & push
-  - [ ] Trigger redeploy Vercel dan cek gambar (tidak 404)
+- [ ] Analisis lokasi gambar `hero.webp` yang sedang terpotong di `src/components/site/sections.tsx` (komponen `WhyUs`).
+- [ ] Edit `WhyUs`:
+  - [ ] Samakan ukuran tampilan menjadi 420x594.
+  - [ ] Ganti styling agar tidak terpotong (gunakan `object-contain` + container fixed).
+  - [ ] Tambahkan efek zoom in/out (idle dan hover) pada gambar tersebut.
+- [ ] Jalankan build/lint sederhana untuk memastikan tidak ada error TypeScript.

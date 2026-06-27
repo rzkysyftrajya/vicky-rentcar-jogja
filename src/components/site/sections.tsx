@@ -85,12 +85,15 @@ export function WhyUs() {
               transition={{ delay: 0.3, duration: 0.7 }}
               className="hidden sm:block absolute -bottom-6 -right-8 w-56 rounded-2xl overflow-hidden shadow-luxe border-4 border-background"
             >
-              <img
-                src={img("hero.webp")}
-                alt="Interior mewah"
-                className="w-full h-44 object-cover"
-                loading="lazy"
-              />
+              <div className="relative w-[420px] h-[594px] max-w-[420px] mx-auto overflow-hidden rounded-2xl">
+                <img
+                  src={img("hero.webp")}
+                  alt="Interior mewah"
+                  className="absolute inset-0 w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <style>{`@keyframes heroSlideFromRightToLeft{0%{transform:translateX(20%)}100%{transform:translateX(-20%)}}`}</style>
             </motion.div>
           </motion.div>
 
