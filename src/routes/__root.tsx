@@ -143,6 +143,15 @@ function RootShell({ children }: { children: ReactNode }) {
               "gtag('config', 'AW-18281491103');",
           }}
         />
+
+        {/* Event snippet for Kontak conversion page */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "gtag('event', 'conversion', {'send_to': 'AW-18281491103/f8YfCIj06sccEJ_VpY1E'});",
+          }}
+        />
+
         <Scripts />
       </body>
     </html>
